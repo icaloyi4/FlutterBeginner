@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:movieaplikasi/homepage.dart';
 import 'package:movieaplikasi/my_images.dart';
 import 'package:movieaplikasi/mycolor.dart';
 import 'package:movieaplikasi/routers.dart';
@@ -20,7 +21,7 @@ class _SplashScreen extends State<SplashScreen>{
   navigateDelay(String page) async {
     var _duration = new Duration(milliseconds: 3000);
     return new Timer(_duration, () {
-      Navigator.of(context).pushReplacementNamed(page);
+      Navigator.of(context).pushReplacementNamed(page, arguments: HomeScreen(title: "Popular Movie", subTitle: "Now Playing"));
     });
   }
 

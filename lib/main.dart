@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
       onGenerateRoute: (RouteSettings route){
         return MaterialPageRoute(
-          builder: (BuildContext ctx) => makeRoutes(route.arguments, context: context, routeName: route.name)
+          builder: (BuildContext ctx) => buildRoute(route.arguments, context: context, routeName: route.name)
         );
       },
       home: SplashScreen(),

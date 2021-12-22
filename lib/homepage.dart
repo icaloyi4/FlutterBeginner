@@ -7,6 +7,10 @@ import 'package:movieaplikasi/movie_response.dart';
 import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatefulWidget {
+  final String? title;
+  final String? subTitle;
+
+  const HomeScreen({this.title, this.subTitle});
   @override
   State<StatefulWidget> createState() {
     return _HomeScreen();
@@ -79,7 +83,7 @@ class _HomeScreen extends State<HomeScreen> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("Popular"),
+                child: Text("${widget.title}"),
               ),
               Container(
                 height: MediaQuery.of(context).size.height * 0.3,
@@ -90,7 +94,7 @@ class _HomeScreen extends State<HomeScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("Now Playing"),
+                child: Text("${widget.subTitle}"),
               ),
               Expanded(
                 child: Container(

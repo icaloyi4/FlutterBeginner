@@ -9,15 +9,15 @@ class NavigateName {
   static const homescreen = '/homescreen';
 }
 
-Widget makeRoutes(Object? arguments,
+/*Widget makeRoutes(Object? arguments,
     {required BuildContext context, required String? routeName}) {
   final Widget child =
       _buildRoute(arguments, context: context, routeName: routeName);
   return child;
   ;
-}
+}*/
 
-Widget _buildRoute(
+Widget buildRoute(
   Object? arguments, {
   required BuildContext context,
   required String? routeName,
@@ -26,7 +26,8 @@ Widget _buildRoute(
     case NavigateName.splash_screen:
       return SplashScreen();
     case NavigateName.homescreen:
-      return HomeScreen();
+      HomeScreen argument = arguments as HomeScreen;
+      return HomeScreen(title: argument.title, subTitle: argument.subTitle,);
     default:
       throw 'Route $routeName is not defined';
   }
